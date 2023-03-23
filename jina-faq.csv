@@ -1,0 +1,40 @@
+Question
+What is the future direction that Jina will go towards?
+What is Jina Hub and how is it useful?
+What's the difference between shards and replicas? When should I use each?
+What database backends does Jina support?
+ How to contextually search through heaps of memes ?
+Can a non tech background fresher without any coding experience learn Jina?
+Is there a way to revert back an import we just did using DocumentArray?
+How to run the local server in colab？
+"How to return some data for a flow, and the data is Irrelevant with any input docs? For example, the case, to tell the flow run a index rebuildng and return the result. In this case, the input is not a doc, but a account and token for authing. The original data will be read from a RDB, so no real data is needed for the request."
+"if I cascade several Executors in a flow, then which endpoint will use in these Executors for a request posting to a specifial gateway? These Executors may have many endpoints. I read the doc but find no parameters to specify it."
+Is Jina going to participate in GSoc?
+ How to write clean and efficient code (in jina)?
+Are there any important constraints/limitations to keep in mind while making Jina-based projects?
+Does Jina or Hub offer a functionality to scale out / speed up image embeddings?
+"In CLIPImageEncoder, is there a way to run this in distributed / multithreaded fashion to speed up the embedding process?"
+"Where can I start contributing code to jina?
+Which technical skills would be benificial in moving forward?"
+Is DocArray exclusively meant for use in Jina only?
+Difference between symbolic search and neural search?
+Pros and Cons of Neural Search ?
+What is Neural Search and why it is important for me?
+How does Jina compare to other search engines? ( such as Vertex.ai)
+"When we apply the push method on DocumentArray, where is my data stored? And can anyone access it except me?"
+Can we get in Outreachy through Jina?
+"What are the real life applications of other combinations of modalities like video and text, audio and text, image and audio etc. in multimodal search ? "
+What are some good resources for a beginner to learn about Jina?
+"Is a vector search engine different than a vector search database? If yes, how so?"
+How is Jina better than the other alternatives such as SpaCy or Algolia?
+What are DocStrings in Jina? And how they are different from docArray?
+What's the difference between Jina and AWS Kendra?
+What are some alternatives to embed_feature_hashing that we could use in this example?
+How do I Install Jina?
+Is Jina compatible with Windows?
+"On fashion-Mnist dataset, is it possible to add additional cloth images on this repository? Or what would happen if users delete some clothes on fashion-Mnist dataset? "
+What are the project ideas using Jina?
+I noticed Executors only receive docs of type DocumentArray as the first parameter. Will subclasses be supported in the future? It would be more convenient and clear to share a custom subclass with a set of properties and methods across projects.
+"After installing Jina, what should I do to create a new project?"
+Can I get some example applications built on Jina for helping me in my project?
+Will Jina become organizations of Google Summer of Code 2022? I am curious about how to become a contributer of jina through open-source activities like gsoc.

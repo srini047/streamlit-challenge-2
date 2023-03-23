@@ -1,0 +1,6 @@
+- Dispaly the dataframe
+- Create a dashbaord kind of appearance using the dataset
+- (Optional) If there are outliers then clean the data
+- Use the `st.experinmental_data_editor` to modify the data
+- Then update the dashboard as per the new data
+- Use case: Similar to Tableau live dashboard update, Excel dashboard creation
