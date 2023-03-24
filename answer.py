@@ -14,4 +14,9 @@ def generate_answer(question):
     stop=["\"\"\""]
     )
 
-    return response.choices[0].text
+    substring = '\n\n'
+    ans = response.choices[0].text
+    if(ans.startswith(substring)):
+        ans = ans[len(substring):]
+
+    return ans
