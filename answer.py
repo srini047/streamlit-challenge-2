@@ -1,11 +1,11 @@
-import os
+import streamlit as st
 import openai
 
 def generate_answer(question):
     openai.api_key =  st.secrets["OPENAI_KEY"]
     response = openai.Completion.create(
     model="text-davinci-003",
-    prompt='Please generate answer for the question: ' + question,
+    prompt='Please generate answer for this FAQ: ' + question,
     temperature=0.7,
     max_tokens=256,
     top_p=1.0,

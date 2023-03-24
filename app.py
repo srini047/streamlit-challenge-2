@@ -1,17 +1,45 @@
+# Importing libraries
 import streamlit as st
 import pandas as pd
+import time
 
-data = pd.read_csv('./jina-faq.csv')
+# Import OpenAI response generator
+from answer import generate_answer
+
+# App title
+st.title('🔰FAQ Answer Generator🔰')
 
 # Uplaod file
-uploaded_file = st.file_uploader('Please upload your FAQ\'s file with only one column of FAQs', type=['.csv'], accept_multiple_files=False, label_visibility="visible")
+uploaded_file = st.file_uploader('Please upload your FAQ\'s file with only one column heading same as `question`', type=['.csv'], accept_multiple_files=False, label_visibility="visible")
 
 # Read data
 data = pd.read_csv(uploaded_file)
 
-# Show the editor
-st.title('FAQ answer generator')
-edited_df = st.experimental_data_editor(
-    data,
-    num_rows="dynamic",
-)
+# Run the OpenAI prompt
+data['ai-generated-answer'] = data.apply(lambda x: generate_answer(x['question']), axis=1)
+
+# Show the editor after clicking on the button
+if(st.button('Click to generate answers👈')):
+    if(not uploaded_file):
+        data = pd.read_csv('./jina-faq.csv')
+
+    # Spinner to load the answers after running the prompt on FAQs
+    with st.spinner('Loading your answers...'):
+        time.sleep(5)
+
+    st.balloons()
+    st.success('Successfully generated answers!!!', icon="✅")
+
+    # Heart of the application i.e. the data editor
+    edited_df = st.experimental_data_editor(
+        data,
+        num_rows="dynamic",
+    )
+
+    # Downlaod answers
+    st.download_button(
+        label="Download generated answers as CSV",
+        data=edited_df,
+        file_name='generated-answers.csv',
+        mime='text/csv',
+    )
