@@ -16,7 +16,7 @@ uploaded_file = st.file_uploader('Please upload your FAQ\'s file with only one c
 data = pd.read_csv(uploaded_file)
 
 # Run the OpenAI prompt
-if(data):
+if(uploaded_file):
     data['ai-generated-answer'] = data.apply(lambda x: generate_answer(x['question']), axis=1)
 
 # Show the editor after clicking on the button
