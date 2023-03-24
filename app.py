@@ -13,7 +13,7 @@ st.title('🔰FAQ Answer Generator🔰')
 uploaded_file = st.file_uploader('Please upload your FAQ\'s file with only one column heading same as `question`', type=['.csv'], accept_multiple_files=False, label_visibility="visible")
 
 # Read data
-data = pd.read_csv(uploaded_file)
+data = pd.read_csv('./jina-faq.csv')
 
 # Run the OpenAI prompt
 if(uploaded_file):
