@@ -10,7 +10,7 @@ from answer import generate_answer
 st.title('🔰FAQ Answer Generator🔰')
 
 # Uplaod file
-uploaded_file = st.file_uploader('Please upload your FAQ\'s file with only one column heading same as `question`', type=['.csv'], accept_multiple_files=False, label_visibility="visible")
+uploaded_file = st.file_uploader('Please upload your FAQ\'s file with only one column heading same as `question`', type=['.csv'], disabled=True, accept_multiple_files=False, label_visibility="visible")
 
 # Read data
 data = pd.read_csv('./jina-faq.csv')
