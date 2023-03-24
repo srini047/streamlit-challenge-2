@@ -6,10 +6,15 @@ import time
 # Import OpenAI response generator
 from answer import generate_answer
 
+@st.cache
+def convert_df_to_csv(df):
+  # IMPORTANT: Cache the conversion to prevent computation on every rerun
+  return df.to_csv().encode('utf-8')
+
 # App title
 st.title('🔰FAQ Answer Generator🔰')
 
-# Uplaod file
+# Upload file
 uploaded_file = st.file_uploader('Please upload your FAQ\'s file with only one column heading same as `question`', type=['.csv'], disabled=True, accept_multiple_files=False, label_visibility="visible")
 
 # Read data
