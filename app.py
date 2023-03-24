@@ -9,7 +9,7 @@ from answer import generate_answer
 @st.cache
 def convert_df_to_csv(df):
   # IMPORTANT: Cache the conversion to prevent computation on every rerun
-  return df.to_csv().encode('utf-8')
+  return df.to_csv(index=False).encode('utf-8')
 
 # App title
 st.title('🔰FAQ Answer Generator🔰')
@@ -37,6 +37,8 @@ if(st.button('Click to generate answers👈')):
         data,
         num_rows="dynamic",
     )
+
+    edited_df = convert_df_to_csv(edited_df)
 
     # Downlaod answers
     st.download_button(
