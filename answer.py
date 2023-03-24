@@ -14,4 +14,4 @@ def generate_answer(question):
     stop=["\"\"\""]
     )
 
-    return response
+    return response.choices[0].text
