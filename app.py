@@ -16,12 +16,11 @@ uploaded_file = st.file_uploader('Please upload your FAQ\'s file with only one c
 data = pd.read_csv(uploaded_file)
 
 # Run the OpenAI prompt
-data['ai-generated-answer'] = data.apply(lambda x: generate_answer(x['question']), axis=1)
+if(data):
+    data['ai-generated-answer'] = data.apply(lambda x: generate_answer(x['question']), axis=1)
 
 # Show the editor after clicking on the button
 if(st.button('Click to generate answers👈')):
-    if(not uploaded_file):
-        data = pd.read_csv('./jina-faq.csv')
 
     # Spinner to load the answers after running the prompt on FAQs
     with st.spinner('Loading your answers...'):
