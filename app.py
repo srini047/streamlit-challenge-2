@@ -34,21 +34,21 @@ if (st.button('Click to generate answers👈')):
         time.sleep(5)
 
     st.balloons()
-    st.success('Successfully generated answers!!!', icon="✅")
+    # st.success('Successfully generated answers!!!', icon="✅")
 
-    # Heart of the application i.e. the data editor
-    edited_df = st.experimental_data_editor(
-        df,
-        use_container_width=True,
-        num_rows='fixed'
-    )
+# Heart of the application i.e. the data editor
+edited_df = st.experimental_data_editor(
+    df,
+    use_container_width=True,
+    num_rows='fixed'
+)
 
-    edited_df = convert_df_to_csv(edited_df)
+edited_df = convert_df_to_csv(edited_df)
 
-    # Downlaod answers
-    st.download_button(
-        label="Download generated answers as CSV",
-        data=edited_df,
-        file_name='generated-answers.csv',
-        mime='text/csv',
-    )
+# Downlaod answers
+st.download_button(
+    label="Download generated answers as CSV",
+    data=edited_df,
+    file_name='generated-answers.csv',
+    mime='text/csv',
+)
