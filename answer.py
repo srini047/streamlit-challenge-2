@@ -2,6 +2,8 @@ import streamlit as st
 import openai
 
 def generate_answer(question, company):
+    if(company == ''):
+        company = 'JinaAI'
     openai.api_key =  st.secrets["OPENAI_KEY"]
     response = openai.Completion.create(
     model="text-davinci-003",

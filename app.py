@@ -26,7 +26,7 @@ uploaded_file = st.file_uploader('Please upload your FAQ\'s file with only one c
 df = pd.read_csv('./jina-faq.csv')
 
 # Enter company name for the FAQs
-company = st.text_input('Enter company name like JinaAI, Naas.ai etc', required=True)
+company = st.text_input('Enter company name like JinaAI etc', placeholder='JinaAI')
 
 # Heart of the application i.e. the data editor
 st.write('Edit the questions (if required) to generate the right response...\n')
