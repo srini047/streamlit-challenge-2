@@ -50,8 +50,5 @@ if (st.button('Click to generate answers👈')):
     success = True
 
 if (success):
-    if st.button('Download edited data as CSV'):
-        csv = df.to_csv(index=False)
-        b64 = base64.b64encode(csv.encode()).decode()
-        href = f'<a href="data:file/csv;base64,{b64}" download="generated-answers.csv">Download CSV</a>'
-        st.markdown(href, unsafe_allow_html=True)
+    if st.download_button(label='Download generated answers  as CSV', data=edited_df.to_csv(index=False), file_name='ai_generated_answers.csv'):
+        st.success('File downloaded successfully')
