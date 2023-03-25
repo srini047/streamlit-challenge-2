@@ -1,0 +1,15 @@
+question
+What is the future direction that Jina will go towards?
+What is Jina Hub and how is it useful?
+What's the difference between shards and replicas? When should I use each?
+What database backends does Jina support?
+ How to contextually search through heaps of memes ?
+Can a non tech background fresher without any coding experience learn Jina?
+Is there a way to revert back an import we just did using DocumentArray?
+How to run the local server in colab？
+"How to return some data for a flow, and the data is Irrelevant with any input docs? For example, the case, to tell the flow run a index rebuildng and return the result. In this case, the input is not a doc, but a account and token for authing. The original data will be read from a RDB, so no real data is needed for the request."
+"if I cascade several Executors in a flow, then which endpoint will use in these Executors for a request posting to a specifial gateway? These Executors may have many endpoints. I read the doc but find no parameters to specify it."
+Is Jina going to participate in GSoc?
+ How to write clean and efficient code (in jina)?
+Are there any important constraints/limitations to keep in mind while making Jina-based projects?
+Does Jina or Hub offer a functionality to scale out / speed up image embeddings?

@@ -13,7 +13,7 @@ def convert_df_to_csv(df):
     return df.to_csv(index=False).encode('utf-8')
 
 # Default values
-# success = False
+success = False
 
 # App title
 st.title('🔰FAQ Answer Generator🔰')
@@ -26,7 +26,7 @@ uploaded_file = st.file_uploader('Please upload your FAQ\'s file with only one c
 df = pd.read_csv('./jina-faq.csv')
 
 # Enter company name for the FAQs
-company = st.text_input('Enter company name like JinaAI, Naas.ai etc')
+company = st.text_input('Enter company name like JinaAI, Naas.ai etc', required=True)
 
 # Heart of the application i.e. the data editor
 st.write('Edit the questions (if required) to generate the right response...\n')
@@ -47,9 +47,11 @@ if (st.button('Click to generate answers👈')):
         time.sleep(5)
 
     st.balloons()
+    success = True
 
-if st.button('Download edited data as CSV'):
-    csv = df.to_csv(index=False)
-    b64 = base64.b64encode(csv.encode()).decode()
-    href = f'<a href="data:file/csv;base64,{b64}" download="edited_data.csv">Download CSV</a>'
-    st.markdown(href, unsafe_allow_html=True)
+if (success):
+    if st.button('Download edited data as CSV'):
+        csv = df.to_csv(index=False)
+        b64 = base64.b64encode(csv.encode()).decode()
+        href = f'<a href="data:file/csv;base64,{b64}" download="generated-answers.csv">Download CSV</a>'
+        st.markdown(href, unsafe_allow_html=True)
