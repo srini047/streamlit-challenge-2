@@ -21,12 +21,12 @@ uploaded_file = st.file_uploader('Please upload your FAQ\'s file with only one c
                                  '.csv'], disabled=True, accept_multiple_files=False, label_visibility="visible")
 
 # Read data
-data = pd.read_csv('./jina-faq.csv')
+df = pd.read_csv('./jina-faq.csv')
 
 # Show the editor after clicking on the button
 if (st.button('Click to generate answers👈')):
     # Run the OpenAI prompt
-    data['ai-generated-answer'] = data.apply(
+    df['ai-generated-answer'] = df.apply(
         lambda x: generate_answer(x['question']), axis=1)
 
     # Spinner to load the answers after running the prompt on FAQs
@@ -38,7 +38,9 @@ if (st.button('Click to generate answers👈')):
 
     # Heart of the application i.e. the data editor
     edited_df = st.experimental_data_editor(
-        data
+        df,
+        use_container_width=True,
+        num_rows='fixed'
     )
 
     edited_df = convert_df_to_csv(edited_df)
