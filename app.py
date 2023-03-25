@@ -23,7 +23,7 @@ uploaded_file = st.file_uploader('Please upload your FAQ\'s file with only one c
                                  '.csv'], disabled=True, accept_multiple_files=False, label_visibility="visible")
 
 # Read data
-df = pd.read_csv('./jina-faq.csv')
+df = pd.read_csv('./jina-faq-comp.csv')
 
 # Enter company name for the FAQs
 company = st.text_input('Enter company name like JinaAI etc', placeholder='JinaAI')
