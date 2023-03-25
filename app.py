@@ -48,10 +48,8 @@ if (st.button('Click to generate answers👈')):
 
     st.balloons()
 
-
-st.download_button(
-    label="Download generated answers as CSV",
-    data=df,
-    file_name='generated-answers.csv',
-    mime='text/csv',
-)
+if st.button('Download edited data as CSV'):
+    csv = df.to_csv(index=False)
+    b64 = base64.b64encode(csv.encode()).decode()
+    href = f'<a href="data:file/csv;base64,{b64}" download="edited_data.csv">Download CSV</a>'
+    st.markdown(href, unsafe_allow_html=True)
