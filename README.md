@@ -1,6 +1,5 @@
-- Dispaly the dataframe
-- Create a dashbaord kind of appearance using the dataset
-- (Optional) If there are outliers then clean the data
-- Use the `st.experinmental_data_editor` to modify the data
-- Then update the dashboard as per the new data
-- Use case: Similar to Tableau live dashboard update, Excel dashboard creation
+- Dispaly the FAQs (currently not supporting custom files due to performance issues with OpenAI API running behind the secens)
+- Show the `st.experinmental_data_editor` to modify the questions in case there are any so that prompt generates correct answers
+- Then generate the answers based on the updated data (will take some time to complete the process...)
+- Download the generated answer to FAQs as a `.csv` file
+- 🎉Done with generating the answers for your community

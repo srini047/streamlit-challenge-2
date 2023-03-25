@@ -50,5 +50,5 @@ if (st.button('Click to generate answers👈')):
     success = True
 
 if (success):
-    if st.download_button(label='Download generated answers  as CSV', data=edited_df.to_csv(index=False), file_name='ai_generated_answers.csv'):
+    if st.download_button(label='Download generated answers  as CSV', data=edited_df.to_csv(index=False), file_name='generated-answers.csv'):
         st.success('File downloaded successfully')
